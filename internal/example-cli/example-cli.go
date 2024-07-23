@@ -5,7 +5,7 @@ package main
 import (
 	"context"
 
-	"github.com/urfave/cli/v3"
+	"github.com/fiatjaf/cli/v3"
 )
 
 func main() {

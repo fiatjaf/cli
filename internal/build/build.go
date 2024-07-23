@@ -20,7 +20,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/urfave/cli/v3"
+	"github.com/fiatjaf/cli/v3"
 )
 
 const (
@@ -58,7 +58,7 @@ func main() {
 
 	app := &cli.Command{
 		Name:  "builder",
-		Usage: "Do a thing for urfave/cli! (maybe build?)",
+		Usage: "Do a thing for fiatjaf/cli! (maybe build?)",
 		Commands: []*cli.Command{
 			{
 				Name:   "vet",
@@ -239,10 +239,10 @@ func TestActionFunc(ctx context.Context, cmd *cli.Command) error {
 	tags := cmd.String("tags")
 
 	for _, pkg := range cmd.StringSlice("packages") {
-		packageName := "github.com/urfave/cli/v3"
+		packageName := "github.com/fiatjaf/cli/v3"
 
 		if pkg != "cli" {
-			packageName = fmt.Sprintf("github.com/urfave/cli/v3/%s", pkg)
+			packageName = fmt.Sprintf("github.com/fiatjaf/cli/v3/%s", pkg)
 		}
 
 		args := []string{"test"}
@@ -404,8 +404,8 @@ func GfmrunActionFunc(ctx context.Context, cmd *cli.Command) error {
 }
 
 // checkBinarySizeActionFunc checks the size of an example binary to ensure that we are keeping size down
-// this was originally inspired by https://github.com/urfave/cli/issues/1055, and followed up on as a part
-// of https://github.com/urfave/cli/issues/1057
+// this was originally inspired by https://github.com/fiatjaf/cli/issues/1055, and followed up on as a part
+// of https://github.com/fiatjaf/cli/issues/1057
 func checkBinarySizeActionFunc(ctx context.Context, cmd *cli.Command) (err error) {
 	const (
 		cliSourceFilePath    = "./internal/example-cli/example-cli.go"
@@ -595,7 +595,7 @@ func SetMkdocsRemoteActionFunc(ctx context.Context, cmd *cli.Command) error {
 	return runCmd(
 		ctx,
 		"git", "remote", "add", "origin",
-		fmt.Sprintf("https://x-access-token:%[1]s@github.com/urfave/cli.git", ghToken),
+		fmt.Sprintf("https://x-access-token:%[1]s@github.com/fiatjaf/cli.git", ghToken),
 	)
 }
 

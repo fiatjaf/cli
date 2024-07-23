@@ -63,7 +63,7 @@ type NoConfig struct{}
 
 // FlagBase [T,C,VC] is a generic flag base which can be used
 // as a boilerplate to implement the most common interfaces
-// used by urfave/cli.
+// used by fiatjaf/cli.
 //
 //	T specifies the type
 //	C specifies the configuration required(if any for that flag type)
